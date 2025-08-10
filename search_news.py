@@ -18,5 +18,11 @@ search_tool = TavilySearch(max_results=10, return_direct=True)
 #     This includes geopolitical influences, inflation, interest rates, etc.
 #     """
 #     query = "recent news about gold price increase or decrease"
-#     results = base_search.invoke({"query": query})
-#     return results
+
+#     search_tool = TavilySearch(
+#         max_results=10,
+#         return_direct=True,
+#         search_window="2d",
+#     )
+
+#     return search_tool.invoke({"query": query})

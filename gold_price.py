@@ -15,7 +15,7 @@ def get_gold_price_info() -> dict:
     try:
         # Current gold price from MetalPrice API
         metal_resp = requests.get(
-            f"https://metals-api.com/api/latest?access_key={metal_price_key}&base=USD&symbols=XAU"
+            f"https://api.metalpriceapi.com/v1/latest?api_key={metal_price_key}&base=XAU&currencies=USD"
         )
         metal_resp.raise_for_status()
         metal_price = metal_resp.json()["rates"]["XAU"]

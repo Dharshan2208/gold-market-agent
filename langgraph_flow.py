@@ -7,8 +7,10 @@ from langgraph.prebuilt import ToolNode
 
 from gold_price import get_gold_price_info
 from search_news import search_tool
+
 # from search_news import search_gold_news
 from analyser import analyze_market_data
+from formatter_mail import formatter_node
 
 
 class State(TypedDict):
@@ -21,6 +23,7 @@ graph.add_node("fetch_prices", get_gold_price_info)
 graph.add_node("fetch_news", ToolNode(tools=[search_tool]))
 # graph.add_node("fetch_news", ToolNode(tools=[search_gold_news]))
 graph.add_node("analyze", analyze_market_data)
+graph.add_node("formatter", formatter_node)
 
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.45)
@@ -39,6 +42,8 @@ graph.add_edge(START, "fetch_prices")
 graph.add_edge("fetch_prices", "price_analyst")
 graph.add_edge("price_analyst", "fetch_news")
 graph.add_edge("fetch_news", "analyze")
-graph.add_edge("analyze", END)
+# graph.add_edge("analyze", END)
+graph.add_edge("analyze", "formatter")
+graph.add_edge("formatter", END)
 
 compiled_graph = graph.compile()

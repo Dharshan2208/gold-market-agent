@@ -21,7 +21,7 @@ def run_market_analysis():
                         "- The major events or reasons driving this change (e.g., inflation news, interest rate decisions, geopolitical tensions)\n"
                         "- Quote the specific dates and price points where significant movement occurred\n"
                         "- Provide a clear summary in 4-5 bullet points\n\n"
-                        "Ensure your response is structured, factual, and uses both the price data and news context."
+                        "Ensure your response is structured, factual, and uses both the price data and news context and also tell me the news context."
                     ),
                 }
             ]
