@@ -29,6 +29,8 @@ pip install -r requirements.txt
 ```bash
 METAL_PRICE_API=your_metals_api_key
 ALPHA_VANTAGE_API_KEY=your_alpha_vantage_key
+GOOGLE_API_KEY=your-gemini-api-key
+TAVILY_API_KEY=your-tavily-api-key
 
 EMAIL_USER=youremail@gmail.com
 EMAIL_PASS=yourapppassword
